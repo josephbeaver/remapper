@@ -1,0 +1,157 @@
+﻿<Page
+    x:Class="Remapper.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Remapper"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d" Loaded="Page_Loaded" >
+
+    <controls:WrapPanel Orientation="Horizontal"
+                        SizeChanged="Page_SizeChanged"
+                        Background="SteelBlue">
+        <RelativePanel Width="912"
+                    Height="684"
+                    Background="LightBlue"
+                    Margin="0,78,0,0">
+            <Image x:Name="CurrentMarkerImage" 
+                       MaxHeight="684"
+                       Width="912"
+                       RelativePanel.AlignLeftWithPanel="True"
+                       RelativePanel.AlignRightWithPanel="True"
+                       />
+            <Button
+                Name="PrevMarker"
+                RelativePanel.AlignLeftWithPanel="True"
+                Content=""
+                Width="50" 
+                Height="684"
+                Click="PrevMarker_Click" 
+                Background="#01000000"/>
+            <Button
+                    Name="NextMarker"
+                    RelativePanel.AlignRightWithPanel="True"
+                    Content=""
+                    Width="50" 
+                    Height="684"
+                    Click="NextMarker_Click" 
+                    Background="#01000000"/>
+        </RelativePanel>
+        <StackPanel Name="ControlPanel" 
+                    Orientation="Vertical"
+                    Margin="0,78,0,0">
+            <StackPanel Width="416"
+                        Height="338"
+                        Margin="20,0">
+                <Border Name="AlertBack" 
+                        Background="White" 
+                        Width="0" 
+                        MaxWidth="406">
+                    <TextBlock Name="Alert"
+                               MinHeight="40"
+                               MaxHeight="90"
+                               TextWrapping="Wrap"
+                               HorizontalAlignment="Center"
+                               FontWeight="Bold"
+                               FontSize="24"
+                               Foreground="Red"
+                               Text="" 
+                               MaxWidth="406"/>
+                </Border>
+                <TextBlock Name="MarkerID"
+                           HorizontalAlignment="Center"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="White" 
+                           Margin="20,20,20,20"
+                           Text="Pictured Marker ID: "
+                           MaxWidth="426"/>
+                <TextBlock HorizontalAlignment="Center"
+                           FontSize="24"
+                           Foreground="White"
+                           TextWrapping="WrapWholeWords"
+                           MaxWidth="426"
+                           Text="Place the GPS unit on top of the pictured marker and tap the Start Reading Coordinates button below." />
+                <Button Name="ToggleGPSRead"
+                        HorizontalAlignment="Center"
+                        FontSize="24"
+                        FontWeight="Bold"
+                        Foreground="SteelBlue"
+                        Background="#CCFFFFFF"
+                        Content="Start Reading Coordinates"
+                        Height="50"
+                        Margin="20,20,20,20"
+                        Click="ToggleGPSRead_Click" />
+            </StackPanel>
+            <StackPanel Width="416"
+                        Height="400"
+                        Margin="20,0">
+                <TextBlock Text="Coordinate Data"
+                           HorizontalAlignment="Center"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           Margin="0,0,0,0"/>
+                <TextBlock Name="Latitude"
+                           Margin="10,10,0,0"
+                           Text="Measured Latitude: "
+                           FontSize="16"
+                           FontWeight="SemiBold"
+                           Foreground="White" />
+                <TextBlock Name="Longitude"
+                           Margin="10,10,0,0"
+                           Text="Measured Longitude: "
+                           FontSize="16"
+                           FontWeight="SemiBold"
+                           Foreground="White" />
+                <TextBlock Name="Error"
+                           Margin="10,20,0,0"
+                           Text="Current Standard Deviation: "
+                           FontSize="16"
+                           FontWeight="SemiBold"
+                           Foreground="White" />
+                <TextBlock Text="GPS Status and Data Feed"
+                           HorizontalAlignment="Left"
+                           FontSize="18"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           Margin="0,20,0,0"/>
+                <TextBlock Name="statusAndData"
+                           Margin="10,5,0,0" 
+                           FontSize="12"
+                           Foreground="White"
+                           Height="160" />
+            </StackPanel>
+        </StackPanel>
+    </controls:WrapPanel>
+
+ <!--   <controls:WrapPanel Name="ImagePanel" Background="SteelBlue" 
+                        Orientation="Vertical">
+        <RelativePanel Height="675"
+                       Width="900"
+                       Margin="0,50,0,0">
+
+        </RelativePanel>
+        <controls:WrapPanel Name="ControlPanel" Orientation="Horizontal">
+            <StackPanel Width="450"
+                    Margin="10,50,0,0">
+
+            </StackPanel>
+            <StackPanel Width="450"
+                        Margin="10,50,0,0">
+                <TextBlock Name="txtStatus"
+                           FontSize="24"
+                           Foreground="White"
+                           TextWrapping="Wrap"
+                           Text="Testing this stupid fucking piece of shit thing. I know. It's boring to just be testing."/>
+                <TextBlock Name="txtPortData" 
+                           Margin="0,20,0,0"
+                           FontSize="24"
+                           Foreground="White"
+                           TextWrapping="Wrap"
+                           Text="This is just test crap, too. Don't know why I'm bothering to put actual text in here. Stupidity, I'd imagine. And a general lack of anything resembling imagination."/>
+            </StackPanel>
+        </controls:WrapPanel>
+    </controls:WrapPanel> -->
+</Page>
